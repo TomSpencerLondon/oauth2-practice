@@ -10,6 +10,12 @@ curl --location --request POST 'localhost:8080/oauth/token' \
 --data-urlencode 'grant_type=client_credentials'
 ```
 
+Also you could do this curl:
+```
+curl --user 'javainuse-client:javainuse-secret' --data-urlencode 'grant_type=client_credentials' --request POST 'localhost:8080/oauth/token'
+{"access_token":"f7c62af0-a0bb-44d7-805c-6ce25ddde53b","token_type":"bearer","expires_in":25567,"scope":"resource-server-read resource-server-write"}⏎
+```
+
 #### Response from authorization
 ```
 {

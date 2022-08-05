@@ -32,27 +32,3 @@ curl --user 'javainuse-client:javainuse-secret' --data-urlencode 'grant_type=cli
 curl --location --request GET 'localhost:9090/test' \
 --header 'Authorization: Bearer 3a337e31-e725-4d60-aed5-b744625321ae'
 ```
-
-##### Diagram
-```
-+--------+                                           +---------------+
-|        |--(A)------- Authorization Grant --------->|               |
-|        |                                           |               |
-|        |<-(B)----------- Access Token -------------|               |
-|        |               & Refresh Token             |               |
-|        |                                           |               |
-|        |                            +----------+   |               |
-|        |--(C)---- Access Token ---->|          |   |               |
-|        |                            |          |   |               |
-|        |<-(D)- Protected Resource --| Resource |   | Authorization |
-| Client |                            |  Server  |   |     Server    |
-|        |--(E)---- Access Token ---->|          |   |               |
-|        |                            |          |   |               |
-|        |<-(F)- Invalid Token Error -|          |   |               |
-|        |                            +----------+   |               |
-|        |                                           |               |
-|        |--(G)----------- Refresh Token ----------->|               |
-|        |                                           |               |
-|        |<-(H)----------- Access Token -------------|               |
-+--------+           & Optional Refresh Token        +---------------+
-```
